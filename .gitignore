@@ -42,3 +42,39 @@ terraform.rc
 # Optional: ignore plan files saved before destroying Terraform configuration
 # Uncomment the line below if you want to ignore planout files.
 # planout
+
+# CloudWatch Agent Lab specific
+# Temporary files
+*.tmp
+*.log
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# AWS credentials (NEVER commit!)
+*.pem
+*.ppk
+.aws/
+credentials
+
+# Config overrides
+local-config.json
+override-config.json
+
+# Test outputs
+test-results/
+stress-test-logs/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Backup files
+*.bak
+*.backup
+*-backup.*

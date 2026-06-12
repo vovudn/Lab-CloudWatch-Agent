@@ -1,0 +1,38 @@
+# terraform.tfvars.example
+# Copy this file to terraform.tfvars and update with your values
+# cp terraform.tfvars.example terraform.tfvars
+
+# REQUIRED: Your email address for SNS notifications
+email_address = "your-email@example.com"
+
+# AWS Region
+aws_region = "ap-southeast-1"
+
+# Project Configuration
+project_name = "cloudwatch-agent-lab"
+environment  = "lab"
+
+# EC2 Configuration
+instance_type = "t2.micro"  # Free tier eligible
+
+# Security - IMPORTANT: Change this to your public IP for security!
+# Get your IP: curl ifconfig.me
+allowed_ssh_cidr = "0.0.0.0/0"  # WARNING: Change to your IP/32
+
+# CloudWatch Alarm Configuration
+cpu_alarm_threshold          = 80    # Alert when CPU > 80%
+cpu_alarm_evaluation_periods = 1     # Trigger after 1 period
+cpu_alarm_period             = 300   # Period = 5 minutes (300 seconds)
+
+# SSH Key Configuration
+create_new_key_pair = true  # Set false if using existing key
+# key_name = "your-existing-key"  # Uncomment if using existing key
+
+# Monitoring
+enable_detailed_monitoring = false  # Set true for 1-minute metrics (extra cost)
+
+# Additional Tags (optional)
+tags = {
+  Owner = "Your Name"
+  Department = "Lab"
+}
